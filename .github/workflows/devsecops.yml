@@ -48,6 +48,6 @@ jobs:
         - name: Scan image with Scout
           uses: docker/scout-action@v1
           with:
-            docker_username: ${{ secrets.DOCKER_USERNAME }}
-            docker_password: ${{ secrets.DOCKER_PASSWORD }}
+            dockerhub-username: ${{ secrets.DOCKER_USERNAME }}
+            dockerhub-password: ${{ secrets.DOCKER_PASSWORD }}
 
