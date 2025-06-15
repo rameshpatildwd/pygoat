@@ -29,3 +29,17 @@ jobs:
             name: bandit-report
             path: bandit-report.json
             
+    docker_job:
+        name: Build and scan Docker image
+        runs-on: ubuntu-latest
+
+        steps:
+        - name: Checkout code
+          uses: actions/checkout@v2
+
+        - name: Set up Docker Buildx
+          uses: docker/setup-buildx-action@v2
+
+        - name: Build Docker image
+          run: docker build -t myapp:${{ github.run_id }} .
+
