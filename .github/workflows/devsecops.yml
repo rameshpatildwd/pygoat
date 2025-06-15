@@ -48,6 +48,7 @@ jobs:
         - name: Scan image with Scout
           uses: docker/scout-action@v1
           with:
-            dockerhub-username: ${{ secrets.DOCKER_USERNAME }}
+            dockerhub-user: ${{ secrets.DOCKER_USERNAME }}
             dockerhub-password: ${{ secrets.DOCKER_PASSWORD }}
+            command: quickview,cves
 
